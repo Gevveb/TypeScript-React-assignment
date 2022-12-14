@@ -5,7 +5,9 @@ const users = [
 ]
 module.exports = users
 
-const newProducts = []
+const newProducts = [
+    
+]
 
 module.exports = newProducts
 

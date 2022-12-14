@@ -8,15 +8,15 @@ const CreateForm = () => {
 
   const { newProductRequest, setNewProductRequest, create } = React.useContext(NewProductContext) as INewProductContext
   return (
-    <div>
+    <div className="container">
       <MainMenuSection />
       <form onSubmit={create} className="d-grid mb-5">
-        <h3 className="display-6 mb-4"> Create User</h3>
-        <input value={newProductRequest.name} onChange={(e) => setNewProductRequest({ ...newProductRequest, name: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your first name" ></input>
-        <input value={newProductRequest.category} onChange={(e) => setNewProductRequest({ ...newProductRequest, category: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your last name" ></input>
-        <input value={newProductRequest.price} onChange={(e) => setNewProductRequest({ ...newProductRequest, price: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your email" ></input>
-        <input autoComplete="true" value={newProductRequest.imageName} onChange={(e) => setNewProductRequest({ ...newProductRequest, imageName: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your password" ></input>
-        <button type="submit" className="btn btn-success py-2 mt-3">CREATE USER</button>
+        <h3 className="display-6 mb-4"> Create a new product</h3>
+        <input value={newProductRequest.name} onChange={(e) => setNewProductRequest({ ...newProductRequest, name: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a name" ></input>
+        <input value={newProductRequest.category} onChange={(e) => setNewProductRequest({ ...newProductRequest, category: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a category" ></input>
+        <input value={newProductRequest.price} onChange={(e) => setNewProductRequest({ ...newProductRequest, price: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a price" ></input>
+        <input autoComplete="true" value={newProductRequest.imageName} onChange={(e) => setNewProductRequest({ ...newProductRequest, imageName: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a image url" ></input>
+        <button type="submit" className="btn __btn-theme py-2 mt-3">CREATE PRODUCT</button>
       </form>
       <NewProductsList />
     </div>

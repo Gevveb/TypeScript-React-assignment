@@ -1,5 +1,5 @@
 export interface NewProduct {
-    id: number
+    articleNumber: string
     name: string
     category: string
     price: string

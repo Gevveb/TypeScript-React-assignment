@@ -11,13 +11,11 @@ export interface ProductContextType {
     product: ProductItem
     allProducts: ProductItem[]
     featuredProducts: ProductItem[]
-    saleCardProducts: ProductItem[]
     sweaters: ProductItem[]
     sets: ProductItem[]
     getProduct: (articleNumber?: string) => void
     getAllProducts: () => void
     getFeaturedProducts: (take?: number) => void
-    getSaleCardProducts: (take?: number) => void
     getSweaters: (take?: number) => void
     getSets: (take?: number) => void
 }
@@ -29,7 +27,6 @@ export const useProductContext = () => { return useContext(ProductContext) }
 
 const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
     const baseUrl: string = 'http://localhost:5000/api/products'
-    const sweatersUrl: string = 'http://localhost:5000/api/category'
     const empty_product_values: ProductItem = {
         tag:'',
         articleNumber: '',
@@ -43,14 +40,13 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
     const [product, setProduct] = useState<ProductItem>(empty_product_values)
     const [allProducts, setAllProducts] = useState<ProductItem[]>([])
     const [featuredProducts, setFeaturedProducts] = useState<ProductItem[]>([])
-    const [saleCardProducts, setSaleCardProducts] = useState<ProductItem[]>([])
     const [sweaters, setSweaters] = useState<ProductItem[]>([])
     const [sets, setSets] = useState<ProductItem[]>([])
 
 
     const getProduct = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const result = await fetch(baseUrl + `/details/${articleNumber}`)
+            const result = await fetch(baseUrl + `/product/details/${articleNumber}`)
             setProduct(await result.json())
         }
     }
@@ -68,16 +64,8 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
         setFeaturedProducts(await result.json())
     }
 
-    const getSaleCardProducts = async (take: number = 0) => {
-        let url = `${baseUrl}/featuredProducts`
-        if (take !== 0)
-            url += `/${take}`
-
-        const result = await fetch(url)
-        setSaleCardProducts(await result.json())
-    }
     const getSweaters = async (take: number = 0) => {
-        let url = `${sweatersUrl}/Sweaters`
+        let url = `${baseUrl}/categories/detail/Sweaters`
         if (take !== 0)
             url += `/${take}`
 
@@ -85,7 +73,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
         setSweaters(await result.json())
     }
     const getSets = async (take: number = 0) => {
-        let url = `${sweatersUrl}/Sets`
+        let url = `${baseUrl}/categories/detail/Sets`
         if (take !== 0)
             url += `/${take}`
 
@@ -95,7 +83,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
     
 
     return (
-        <ProductContext.Provider value={{ product, allProducts, featuredProducts,saleCardProducts, sweaters, sets, getSaleCardProducts , getAllProducts, getProduct, getFeaturedProducts, getSweaters, getSets }}>
+        <ProductContext.Provider value={{ product, allProducts, featuredProducts, sweaters, sets, getAllProducts, getProduct, getFeaturedProducts, getSweaters, getSets }}>
             {children}
         </ProductContext.Provider>
     )

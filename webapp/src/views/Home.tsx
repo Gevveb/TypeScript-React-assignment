@@ -14,14 +14,10 @@ import { ProductContextType, useProductContext } from '../Contexts/ProductContex
 
 const Home = () => {
  document.title = 'Fixxo.'
-  const {featuredProducts, getFeaturedProducts, saleCardProducts, getSaleCardProducts, sweaters, getSweaters, sets, getSets} = useProductContext() as ProductContextType
+  const {featuredProducts, getFeaturedProducts, sweaters, getSweaters, sets, getSets} = useProductContext() as ProductContextType
 
   useEffect(() => {
     getFeaturedProducts(8)
-  },[])
-
-  useEffect(() => {
-    getSaleCardProducts(4)
   },[])
   useEffect(() => {
     getSweaters(4)

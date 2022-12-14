@@ -9,18 +9,18 @@ export interface INewProductContext {
     setNewProductRequest: React.Dispatch<React.SetStateAction<NewProductRequest>>
     newProducts: NewProduct[]
     create: (e: React.FormEvent) => void
-    get: (id?: number) => void
+    get: (articleNumber: string) => void
     getAll: () => void
-    update: (e: React.FormEvent) => void
-    remove: (id: number) => void
+    update: (e: React.FormEvent, articleNumber: string) => void
+    remove: (articleNumber:string) => void
 }
 
 export const NewProductContext = createContext<INewProductContext | null>(null)
 export const useNewProductContext = () => { return useContext(NewProductContext) }
 
 const NewProductProvider = ({ children }: NewProductProviderProps) => {
-    const baseUrl = 'http://localhost:5000/api/mange/'
-    const newProduct_default: NewProduct = { id: 0, name: '', category: '', price: '', imageName: '' }
+    const baseUrl = 'http://localhost:5000/api/products'
+    const newProduct_default: NewProduct = { articleNumber: '', name: '', category: '', price: '', imageName: '' }
     const newProductRequest_default: NewProductRequest = { name: '', category: '', price: '', imageName: '' }
 
     const [newProduct, setNewProduct] = useState<NewProduct>(newProduct_default)
@@ -41,20 +41,29 @@ const NewProductProvider = ({ children }: NewProductProviderProps) => {
             setNewProductRequest(newProductRequest_default)
 
     }
-    const get = async (id?: number) => {
-        const result = await fetch(`${baseUrl}/${id}`)
-        if (result.status === 200)
-            setNewProduct(await result.json())
+    const get = async (articleNumber: string) => {
+        try {
+            const result = await fetch(`${baseUrl}/product/details/${articleNumber}`)
+            if (result.status !== 200) {
+                throw new Error(result.statusText)
+            }
+            const data = await result.json()
+            console.log(data)
+                setNewProduct(data)
+
+        } catch(err) {
+            console.log(err)
+        }
     }
     const getAll = async () => {
         const result = await fetch(`${baseUrl}`)
         if (result.status === 200)
             setNewProducts(await result.json())
     }
-    const update = async (e: React.FormEvent) => {
+    const update = async (e: React.FormEvent, articleNumber: string) => {
         e.preventDefault()
-
-        const result = await fetch(`${baseUrl}/${newProduct.id}`, {
+console.log(articleNumber)
+        const result = await fetch(`${baseUrl}/${articleNumber}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,8 +77,8 @@ const NewProductProvider = ({ children }: NewProductProviderProps) => {
 
 
     }
-    const remove = async (id: number) => {
-        const result = await fetch(`${baseUrl}/${id}`, {
+    const remove = async (articleNumber: string) => {
+        const result = await fetch(`${baseUrl}/${articleNumber}`, {
             method: 'delete',
         })
         if (result.status === 204)

@@ -57,6 +57,8 @@ header {
     box-shadow: 0 0 12px 8px var(--color-hover);
 }
 
+
+
 .btn-menu-icon {
     border: none;
     outline: none;
@@ -293,8 +295,32 @@ footer .social-media a {
 .item-price button:hover {
     background-color: var(--color-gray);
 }
+.test {
+    margin: 0 10px;
+    color: var(--color-theme);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.test:hover {
+   color: var(--color-dark);
+}
+.test2 {
+    margin-left: 80px;
+    color: var(--color-theme);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.test2:hover {
+   color: var(--color-dark);
+}
+.test3{
+    padding: 10px 20px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: var(--color-hover) 0px 0px 8px 2px;
 
-
+}
 /* ..... ..... */
 
 
