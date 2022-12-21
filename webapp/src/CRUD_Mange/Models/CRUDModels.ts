@@ -1,14 +1,20 @@
 export interface NewProduct {
     articleNumber: string
+    tag: string
     name: string
     category: string
+    description: string
     price: string
+    rating: string
     imageName: string
 }
 export interface NewProductRequest {
+    tag: string
     name: string
     category: string
+    description: string
     price: string
+    rating: string
     imageName: string
 }
 

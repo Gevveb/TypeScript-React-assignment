@@ -8,7 +8,7 @@ interface AlertNotificationType {
 
 const AlertNotification: React.FC<AlertNotificationType> = ({ alertType = "warning", title, text }) => {
     return (
-        <div className={`alert alert-${alertType} text-center`} mb-5 role="alert">
+        <div className={`alert alert-${alertType} text-center`} role="alert">
             <h3>{title}</h3>
             <p>{text}</p>
         </div>
@@ -16,6 +16,3 @@ const AlertNotification: React.FC<AlertNotificationType> = ({ alertType = "warni
 }
 
 export default AlertNotification
-
-// Thank you for your comments
-// We will contact you as soon as possible.

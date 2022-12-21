@@ -50,22 +50,3 @@ const Home = () => {
 
 export default Home 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const products = useContext(FeaturedProductsContext) 
-// const[topProducts, setTopProducts] = useState([
-  //   {tag: "", articleNumber: "1", name: "BLACK SHOES", category: "Fashion", description: "" ,price: 120.00, rating: 5, imageName: "https://images.pexels.com/photos/1144834/pexels-photo-1144834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}, 
-  //   {tag: "", articleNumber: "2", name: "BEIGE BLAZER", category: "Fashion", description: "" , price: 110.00, rating: 5, imageName: "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-  //   {tag: "", articleNumber: "3", name: "RED JEANS SET", category: "Fashion", description: "" , price: 89.00, rating: 5, imageName: "https://images.pexels.com/photos/718977/pexels-photo-718977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-  //   {tag: "", articleNumber: "4", name: "DENIM JACKET", category: "Fashion", description: "" , price: 42.00, rating: 5, imageName: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
-  // ]) 

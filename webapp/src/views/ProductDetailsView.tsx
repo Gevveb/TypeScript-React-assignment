@@ -134,12 +134,3 @@ const ProductDetailsView: React.FC = () => {
 
 export default ProductDetailsView
 
-
-// useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`)
-  //     setProduct(await result.json())
-
-  //   }
-  //   fetchData()
-  // }, [])

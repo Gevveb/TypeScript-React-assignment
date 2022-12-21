@@ -9,7 +9,6 @@ import { ProductContextType, useProductContext } from '../Contexts/ProductContex
 
 const ProductsView: React.FC= () => {
 
-  // const Product = useContext(ProductContext)
   const {allProducts, getAllProducts }= useProductContext() as ProductContextType
 
   useEffect(() => {
@@ -22,7 +21,6 @@ const ProductsView: React.FC= () => {
     <div>
       <MainMenuSection />
       <BreadcrumbSection currentPage="Products" />
-      {/* <ProductGridSection title="Products" items={Product}/> */}
       <ProductGridSection title="Products" items={allProducts}/>
     </div>
     

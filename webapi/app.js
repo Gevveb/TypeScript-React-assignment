@@ -19,17 +19,7 @@ app.use(bodyParser.json())
 app.use('/api/products', require('./controllers/productsController'))
 app.use('/api/authentication', require('./controllers/authenticationController'))
 
-// const productsController = require('./controllers/productsController')
-// app.use('/api/products', productsController)
 
-const usersController = require('./controllers/usersController')
-app.use('/api/users', usersController)
-
-// const categoryController = require('./controllers/categoryController')
-// app.use('/api/category', categoryController)
-
-// const newProductsController = require('./controllers/newProductsController')
-// app.use('/api', newProductsController)
 
 
 mongodb()

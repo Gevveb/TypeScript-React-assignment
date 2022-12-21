@@ -29,10 +29,24 @@ header {
     margin-bottom: 135px;
 }
 
+.hidden-btn{
+    display: none;
+}
+
 .gradient-gray {
     background-color: rgb(230, 230, 230);
     background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(245, 245, 245, 1) 100%);
     color: black;
+}
+.errorMessage {
+    color: var(--color-theme);
+    margin-top: 5px;
+    font-size: 0.8em;
+}
+
+.error {
+    color: var(--color-theme);
+    border: 1px solid var(--color-theme);
 }
 
 .not-found{

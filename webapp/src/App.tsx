@@ -12,6 +12,7 @@ import  ProductProvider  from './Contexts/ProductContext';
 import CreateForm from './CRUD_Mange/Components/CreateForm';
 import NewProductProvider from './CRUD_Mange/Contexts/NewProductContext';
 import UpdateForm from './CRUD_Mange/Components/UpdateForm';
+import SignUpInView from './views/SignUpInView';
 
 function App() {
 
@@ -25,9 +26,11 @@ function App() {
             <Route path="/products" element={<ProductsView />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/mange" element={<CreateForm />} />
+            <Route path="/login" element={<SignUpInView />} />
             <Route path=":id" element={<UpdateForm />} />
             <Route path="/products/:id" element={<ProductDetailsView />} />
             <Route path="/categories" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
       </ProductProvider>
       </NewProductProvider>
@@ -38,42 +41,3 @@ function App() {
 }
 
 export default App;
-
-  // const [products, setProducts] = useState([])
-  // const [featuredProducts, setFeaturedProducts] = useState([])
-
-  // useEffect(() => {
-  // //   const fetchAll = async () => {
-  // //     const result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-  // //     setProducts(await result.json())
-  // //   }
-  // //   fetchAll()
-
-  // //   const fetchFeaturedProducts = async () => {
-  // //     const result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-  // //     setFeaturedProducts(await result.json())
-  // //   }
-  // //   fetchFeaturedProducts()
-
-  // // }, [setProducts, setFeaturedProducts])
-
-// return (
-//   <BrowserRouter>
-//   <ShoppingCartProvider>
-//     <ProductContext.Provider value={products}>
-//       <FeaturedProductsContext.Provider value={featuredProducts}>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/products" element={<ProductsView />} />
-//           <Route path="/contacts" element={<Contacts />} />
-//           <Route path="/products/:id" element={<ProductDetailsView />} />
-//           <Route path="*" element={<NotFound />} />
-//         </Routes>
-//       </FeaturedProductsContext.Provider>
-//     </ProductContext.Provider>
-//   </ShoppingCartProvider>
-//   <FooterSection />
-
-// </BrowserRouter>
-// );
-// }

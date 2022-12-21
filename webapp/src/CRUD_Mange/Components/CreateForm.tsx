@@ -12,9 +12,12 @@ const CreateForm = () => {
       <MainMenuSection />
       <form onSubmit={create} className="d-grid mb-5">
         <h3 className="display-6 mb-4"> Create a new product</h3>
+        <input value={newProductRequest.tag} onChange={(e) => setNewProductRequest({ ...newProductRequest, tag: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a tag" ></input>
         <input value={newProductRequest.name} onChange={(e) => setNewProductRequest({ ...newProductRequest, name: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a name" ></input>
         <input value={newProductRequest.category} onChange={(e) => setNewProductRequest({ ...newProductRequest, category: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a category" ></input>
+        <input value={newProductRequest.description} onChange={(e) => setNewProductRequest({ ...newProductRequest, description: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a description" ></input>
         <input value={newProductRequest.price} onChange={(e) => setNewProductRequest({ ...newProductRequest, price: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a price" ></input>
+        <input value={newProductRequest.rating} onChange={(e) => setNewProductRequest({ ...newProductRequest, rating: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a rating" ></input>
         <input autoComplete="true" value={newProductRequest.imageName} onChange={(e) => setNewProductRequest({ ...newProductRequest, imageName: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter a image url" ></input>
         <button type="submit" className="btn __btn-theme py-2 mt-3">CREATE PRODUCT</button>
       </form>
