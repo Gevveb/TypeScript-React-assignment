@@ -27,12 +27,7 @@ controller.route('/').get(async (req, res) => {
     } else
         res.status(400).json()
 
-    // try {
-    //     const products = await ProductSchema.find()
-    //     res.status(200).json(products)
-    // } catch {
-    //     res.status(400).json()
-    // }
+
 })
 
 controller.route('/:tag').get(async (req, res) => {
