@@ -181,7 +181,7 @@ controller.route('/:articleNumber').delete(authorize, async (req, res, next) => 
 
 
 
-controller.route('/:articleNumber').put(authorize, async (req, res) => {
+controller.route('/update/:articleNumber').put(authorize, async (req, res) => {
     console.log("funkar ")
     try{
         const product = await ProductSchema.findById(req.params.articleNumber)

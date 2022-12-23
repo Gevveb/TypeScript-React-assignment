@@ -39,7 +39,7 @@ const NewProductsList = () => {
                                         <div className="  __btn-theme-dark" onClick={() => removeProduct(newProduct.articleNumber)}>
                                             <i className="fa-sharp fa-solid fa-trash"></i>
                                         </div>
-                                        <NavLink className=" __btn-theme-dark" to={`/${newProduct.articleNumber}`} end><i className="fa-regular fa-dice"></i></NavLink>
+                                        <NavLink className=" __btn-theme-dark" to={`/update/${newProduct.articleNumber}`} end><i className="fa-regular fa-dice"></i></NavLink>
                                     </div>
 
                                 </div>

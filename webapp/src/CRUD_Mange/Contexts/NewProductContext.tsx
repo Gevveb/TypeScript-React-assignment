@@ -83,7 +83,7 @@ const NewProductProvider = ({ children }: NewProductProviderProps) => {
     const update = async (e: React.FormEvent, articleNumber: string) => {
         e.preventDefault()
         console.log(articleNumber)
-        const result = await fetch(`${baseUrl}/${articleNumber}`, {
+        const result = await fetch(`${baseUrl}/update/${articleNumber}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',

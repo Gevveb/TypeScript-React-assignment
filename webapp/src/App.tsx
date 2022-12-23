@@ -27,7 +27,7 @@ function App() {
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/mange" element={<CreateForm />} />
             <Route path="/login" element={<SignUpInView />} />
-            <Route path=":id" element={<UpdateForm />} />
+            <Route path="/update/:id" element={<UpdateForm />} />
             <Route path="/products/:id" element={<ProductDetailsView />} />
             <Route path="/categories" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
