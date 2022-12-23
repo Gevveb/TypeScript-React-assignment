@@ -29,7 +29,7 @@ header {
     margin-bottom: 135px;
 }
 
-.hidden-btn{
+.hidden-btn {
     display: none;
 }
 
@@ -38,6 +38,7 @@ header {
     background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(245, 245, 245, 1) 100%);
     color: black;
 }
+
 .errorMessage {
     color: var(--color-theme);
     margin-top: 5px;
@@ -49,7 +50,7 @@ header {
     border: 1px solid var(--color-theme);
 }
 
-.not-found{
+.not-found {
     height: 400px;
     display: flex;
     align-items: center;
@@ -57,7 +58,8 @@ header {
     margin-bottom: 150px;
     flex-direction: column;
 }
-.not-found h2{
+
+.not-found h2 {
     border: 1px solid var(--color-theme);
     border-radius: 5px;
     display: inline;
@@ -309,32 +311,17 @@ footer .social-media a {
 .item-price button:hover {
     background-color: var(--color-gray);
 }
-.test {
-    margin: 0 10px;
-    color: var(--color-theme);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-.test:hover {
-   color: var(--color-dark);
-}
-.test2 {
-    margin-left: 80px;
-    color: var(--color-theme);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-.test2:hover {
-   color: var(--color-dark);
-}
-.test3{
-    padding: 10px 20px;
-    display: flex;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: var(--color-hover) 0px 0px 8px 2px;
 
+.test1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222529;
 }
+
+.test {
+    border: 1px solid var(--color-gray);
+}
+
 /* ..... ..... */
 
 
@@ -1390,6 +1377,7 @@ footer .social-media a {
         background-color: var(--color-hover);
         border: 1px solid var(--color-theme);
     }
+
     /* .................. */
     .__banners {
         max-width: 1110px;
@@ -1419,7 +1407,7 @@ footer .social-media a {
 
     .__banners .banners-title-1 .__title-1 h2 {
         margin-bottom: 50px;
-        
+
     }
 
     .__banners .banners-title-2 {
@@ -2159,7 +2147,7 @@ footer .social-media a {
         display: flex;
         align-items: center;
         flex-direction: column;
-        
+
     }
 
     .__banners .banners-title-1 {
@@ -2290,44 +2278,47 @@ footer .social-media a {
         display: none;
     }
 
-/* ....................... */
+    /* ....................... */
 
     .shoppingCart {
         width: 70% !important;
         font-size: 12px;
     }
+
     .shoppingcart-item {
         margin: 10px 10px;
         display: flex;
         flex-direction: column;
     }
+
     .shoppingcart-item .item-info span {
         border-right: 1px solid var(--color-gray);
         border-left: 1px solid var(--color-gray);
-        
-    
+
+
     }
-    
+
     .item-info-quantity {
         display: inline-block;
         background-color: #f1f1f1;
         border: 1px solid var(--color-gray);
         border-radius: 6px;
     }
-    
+
     .item-info-quantity .box-btn-left {
         border: none;
         border-radius: 6px 0 0 6px;
         transition: 0.2s ease-in-out;
-     
+
     }
-    
+
     .item-info-quantity .box-btn-right {
         border: none;
         border-radius: 0 6px 6px 0;
         transition: 0.2s ease-in-out;
         ;
     }
+
     .item-price button {
         border: 1px solid var(--color-gray);
         border-radius: 3px;
@@ -2335,10 +2326,10 @@ footer .social-media a {
         width: 20px;
         font-size: 0.4rem;
     }
-    
-    
 
-/* .................................................................... */
+
+
+    /* .................................................................... */
 
     .product-offer.container {
         max-width: 920px;
@@ -2600,7 +2591,7 @@ footer .social-media a {
         color: var(--color-darkgray);
     }
 
-    .not-found{
+    .not-found {
         height: 500px;
         display: flex;
         align-items: center;
@@ -2608,7 +2599,8 @@ footer .social-media a {
         margin-bottom: 160px;
         flex-direction: column;
     }
-    .not-found h2{
+
+    .not-found h2 {
         border: 1px solid var(--color-theme);
         border-radius: 5px;
         display: inline;
